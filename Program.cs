@@ -13,7 +13,6 @@ namespace MediaLibrarySystem
       MediaLibrary myLibrary = new MediaLibrary();
       MediaLibraryManager manager = new MediaLibraryManager(myLibrary);
 
-
       int choice = manager.DisplayMenu();
       manager.GetSelectedOption(choice);
 
