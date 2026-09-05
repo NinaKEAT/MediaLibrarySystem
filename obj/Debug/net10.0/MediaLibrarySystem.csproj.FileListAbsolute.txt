@@ -1,0 +1,14 @@
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/bin/Debug/net10.0/MediaLibrarySystem
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/bin/Debug/net10.0/MediaLibrarySystem.deps.json
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/bin/Debug/net10.0/MediaLibrarySystem.runtimeconfig.json
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/bin/Debug/net10.0/MediaLibrarySystem.dll
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/bin/Debug/net10.0/MediaLibrarySystem.pdb
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.GeneratedMSBuildEditorConfig.editorconfig
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.AssemblyInfoInputs.cache
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.AssemblyInfo.cs
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.csproj.CoreCompileInputs.cache
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.dll
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/refint/MediaLibrarySystem.dll
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.pdb
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/MediaLibrarySystem.genruntimeconfig.cache
+/home/msi/Documents/PRACTICE/COURSERA/MediaLibrarySystem/obj/Debug/net10.0/ref/MediaLibrarySystem.dll
