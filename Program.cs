@@ -12,9 +12,12 @@ namespace MediaLibrarySystem
 
       MediaLibrary myLibrary = new MediaLibrary();
       MediaLibraryManager manager = new MediaLibraryManager(myLibrary);
-
-      int choice = manager.DisplayMenu();
-      manager.GetSelectedOption(choice);
+      int choice;
+      do
+      {
+        choice = manager.DisplayMenu();
+        manager.GetSelectedOption(choice);
+      } while (choice != 5);
 
       Console.WriteLine("\n===============================================");
       Console.WriteLine("Thank you for using the Media Library System!");

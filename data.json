@@ -138,5 +138,12 @@
     "year": 1965,
     "author": "Frank Herbert",
     "pageCount": 412
+  },
+  {
+    "category": "musicAlbum",
+    "title": "What If",
+    "year": 2021,
+    "artist": "Ethan Dufault",
+    "trackCount": 9
   }
 ]

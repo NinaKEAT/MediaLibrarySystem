@@ -66,19 +66,19 @@ namespace MediaLibrarySystem
     public int DisplayMenu()
     {
       // Implementation for displaying the menu can go here
-      Console.WriteLine("Media Library Menu:");
+      Console.WriteLine("\nMedia Library Menu:");
       Console.WriteLine("1. Display all media items");
       Console.WriteLine("2. Add a new media item");
       Console.WriteLine("3. Search for a media item");
       Console.WriteLine("4. Get detailed report");
       Console.WriteLine("5. Exit");
 
-      Console.Write("Enter your choice: ");
+      Console.Write("\nEnter your choice: ");
       int choice;
-      while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 6)
+      while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 5)
       {
-        Console.WriteLine("Invalid choice. Please enter a number between 1 and 6.");
-        Console.Write("Enter your choice: ");
+        Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
+        Console.Write("\nEnter your choice: ");
       }
       return choice;
     }
