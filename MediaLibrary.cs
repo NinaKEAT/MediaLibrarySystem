@@ -43,6 +43,22 @@ namespace MediaLibrarySystem
       }
       return null;
     }
+    public void GetDetailedReport()
+    {
+      double totalEstimatedValue = 0.0;
+      Console.WriteLine("\nDetailed Media Library Report:");
+      foreach (var item in _mediaItems)
+      {
+        Console.WriteLine(new string('-', 40));
+        Console.WriteLine(item.GetDisplayInfo());
+        Console.WriteLine($"Category: {item.GetCategoryInfo()}");
+        double estimatedValue = item.GetEstimatedValue();
+        Console.WriteLine($"Estimated Value: ${estimatedValue:F2}");
+        totalEstimatedValue += estimatedValue;
+      }
+      Console.WriteLine(new string('=', 40));
+      Console.WriteLine($"Total Estimated Value: ${totalEstimatedValue:F2}");
+    }
   }
 
 }

@@ -46,5 +46,16 @@ namespace MediaLibrarySystem
     {
       return $"ID: {MediaId}, Title: {Title}, Year: {Year}";
     }
+    // Add to MediaItem base class
+    public virtual double GetEstimatedValue()
+    {
+      // Default implementation based on age
+      int age = DateTime.Now.Year - Year;
+      return Math.Max(5.0, 25.0 - (age * 2.0)); // Basic depreciation
+    }
+    public virtual string GetCategoryInfo()
+    {
+      return "General Media Item";
+    }
   }
 }

@@ -8,7 +8,7 @@ namespace MediaLibrarySystem
     {
       Console.WriteLine("===============================================");
       Console.WriteLine("Welcome to the Media Library Management System!");
-      Console.WriteLine("===============================================");
+      Console.WriteLine("===============================================\n");
 
       // TODO: Add your media library logic here
       Book myBook = new Book("The Great Gatsby", 1925, "F. Scott Fitzgerald", 218);
@@ -26,7 +26,7 @@ namespace MediaLibrarySystem
       myLibrary.AddItem(myAlbum);
       myLibrary.AddItem(mySecondAlbum);
 
-      myLibrary.DisplayAllItems();
+      // myLibrary.DisplayAllItems();
 
       // Example of finding an item by title
       MediaItem foundItem = myLibrary.FindByTitle("Inception");
@@ -38,8 +38,9 @@ namespace MediaLibrarySystem
       {
         Console.WriteLine("Item not found.");
       }
+      myLibrary.GetDetailedReport();
 
-      Console.WriteLine("===============================================");
+      Console.WriteLine("\n===============================================");
       Console.WriteLine("Thank you for using the Media Library System!");
       Console.WriteLine("===============================================");
       Console.ReadLine(); // Keep console open

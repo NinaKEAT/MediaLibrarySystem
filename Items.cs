@@ -42,7 +42,20 @@ namespace MediaLibrarySystem
       return $"Book: {Title} by {Author} ({Year}) - {PageCount} pages";
     }
     // TODO: Override virtual method GetBasicInfo() if needed
+    public override double GetEstimatedValue()
+    {
+      double baseValue = base.GetEstimatedValue();
+      double pageBonus = PageCount > 300 ? 5.0 : 0.0;
+      return baseValue + pageBonus;
+    }
+    public override string GetCategoryInfo()
+    {
+      return "Book";
+    }
   }
+
+
+
   public class DVD : MediaItem
   {
     private string _director = string.Empty;
@@ -81,7 +94,21 @@ namespace MediaLibrarySystem
     {
       return $"DVD: {Title} directed by {Director} ({Year}) - {RuntimeMinutes} minutes";
     }
+    public override double GetEstimatedValue()
+    {
+      double baseValue = base.GetEstimatedValue();
+      double runtimeBonus = RuntimeMinutes > 120 ? 3.0 : 0.0;
+      return baseValue + runtimeBonus;
+    }
+    public override string GetCategoryInfo()
+    {
+      return "DVD";
+    }
   }
+
+
+
+
   public class MusicAlbum : MediaItem
   {
     private string _artist = string.Empty;
@@ -119,6 +146,16 @@ namespace MediaLibrarySystem
     public override string GetDisplayInfo()
     {
       return $"Music Album: {Title} by {Artist} ({Year}) - {TrackCount} tracks";
+    }
+    public override double GetEstimatedValue()
+    {
+      double baseValue = base.GetEstimatedValue();
+      double trackBonus = TrackCount > 12 ? 4.0 : 0.0;
+      return baseValue + trackBonus;
+    }
+    public override string GetCategoryInfo()
+    {
+      return "Music Album";
     }
   }
 }
