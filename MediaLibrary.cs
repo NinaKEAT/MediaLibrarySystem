@@ -59,6 +59,27 @@ namespace MediaLibrarySystem
       Console.WriteLine(new string('=', 40));
       Console.WriteLine($"Total Estimated Value: ${totalEstimatedValue:F2}");
     }
+    public List<MediaItem> SearchItems(string searchTerm)
+    {
+      List<MediaItem> results = new List<MediaItem>();
+      foreach (var item in _mediaItems)
+      {
+        if (item.MatchesSearch(searchTerm))
+        {
+          results.Add(item);
+        }
+      }
+      return results;
+    }
+    public void GetDisplaySummary()
+    {
+      Console.WriteLine("\nMedia Library Summary:");
+      foreach (var item in _mediaItems)
+      {
+        Console.WriteLine(item.GetDisplayInfo());
+        Console.WriteLine(item.GetShortDescription());
+      }
+    }
   }
 
 }

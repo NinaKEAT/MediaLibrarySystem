@@ -29,16 +29,24 @@ namespace MediaLibrarySystem
       // myLibrary.DisplayAllItems();
 
       // Example of finding an item by title
-      MediaItem foundItem = myLibrary.FindByTitle("Inception");
-      if (foundItem != null)
+      // MediaItem foundItem = myLibrary.FindByTitle("Inception");
+      // if (foundItem != null)
+      // {
+        // Console.WriteLine("Found item: " + foundItem.GetDisplayInfo());
+      // }
+      // else
+      // {
+        // Console.WriteLine("Item not found.");
+      // }
+      // myLibrary.GetDetailedReport();
+
+      var searchResults = myLibrary.SearchItems("Michael");
+      Console.WriteLine("\nSearch Results:");
+      foreach (var item in searchResults)
       {
-        Console.WriteLine("Found item: " + foundItem.GetDisplayInfo());
+        Console.WriteLine(item.GetDisplayInfo());
       }
-      else
-      {
-        Console.WriteLine("Item not found.");
-      }
-      myLibrary.GetDetailedReport();
+      myLibrary.GetDisplaySummary();
 
       Console.WriteLine("\n===============================================");
       Console.WriteLine("Thank you for using the Media Library System!");

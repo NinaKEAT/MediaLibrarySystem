@@ -52,6 +52,14 @@ namespace MediaLibrarySystem
     {
       return "Book";
     }
+    public override string GetShortDescription()
+    {
+      return $"Book: {Title} by {Author}";
+    }
+    public override List<string> GetSearchableTerms()
+    {
+      return new List<string> { Title, Author };
+    }
   }
 
 
@@ -103,6 +111,14 @@ namespace MediaLibrarySystem
     public override string GetCategoryInfo()
     {
       return "DVD";
+    }
+    public override string GetShortDescription()
+    {
+      return $"DVD: {Title} directed by {Director}";
+    }
+    public override List<string> GetSearchableTerms()
+    {
+      return new List<string> { Title, Director };
     }
   }
 
@@ -156,6 +172,14 @@ namespace MediaLibrarySystem
     public override string GetCategoryInfo()
     {
       return "Music Album";
+    }
+    public override string GetShortDescription()
+    {
+      return $"Music Album: {Title} by {Artist}";
+    }
+    public override List<string> GetSearchableTerms()
+    {
+      return new List<string> { Title, Artist };
     }
   }
 }

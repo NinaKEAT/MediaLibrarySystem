@@ -1,6 +1,18 @@
 namespace MediaLibrarySystem
 {
-  public abstract class MediaItem
+  // Add this interface to your namespace
+  public interface IDisplayable
+  {
+    string GetDisplayInfo();
+    string GetShortDescription();
+  }
+  public interface ISearchable
+  {
+    bool MatchesSearch(string searchTerm);
+    List<string> GetSearchableTerms();
+  }
+
+  public abstract class MediaItem : IDisplayable, ISearchable
   {
     private string _title = string.Empty;
     private int _year;
@@ -42,6 +54,12 @@ namespace MediaLibrarySystem
       _mediaId = _nextMediaId++;
     }
     public abstract string GetDisplayInfo();
+    public abstract string GetShortDescription();
+    public virtual bool MatchesSearch(string searchTerm)
+    {
+      return GetSearchableTerms().Any(term => term.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+    }
+    public abstract List<string> GetSearchableTerms();
     public virtual string GetBasicInfo()
     {
       return $"ID: {MediaId}, Title: {Title}, Year: {Year}";
