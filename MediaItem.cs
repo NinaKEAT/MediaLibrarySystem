@@ -39,14 +39,14 @@ namespace MediaLibrarySystem
     {
       if (string.IsNullOrWhiteSpace(title))
       {
-        throw new ArgumentException("Title cannot be empty.");
+        throw new ArgumentException("Title cannot be empty.", nameof(title));
       }
     }
     protected void ValidateYear(int year)
     {
       if (year < 1800 || year > DateTime.Now.Year)
       {
-        throw new ArgumentException($"Year must be between 1800 and {DateTime.Now.Year}.");
+        throw new ArgumentException($"Year must be between 1800 and {DateTime.Now.Year}.", nameof(year));
       }
     }
     public MediaItem()
@@ -57,6 +57,10 @@ namespace MediaLibrarySystem
     public abstract string GetShortDescription();
     public virtual bool MatchesSearch(string searchTerm)
     {
+      if (string.IsNullOrWhiteSpace(searchTerm))
+      {
+        throw new ArgumentException("Search term cannot be empty.", nameof(searchTerm));
+      }
       return GetSearchableTerms().Any(term => term.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
     }
     public abstract List<string> GetSearchableTerms();

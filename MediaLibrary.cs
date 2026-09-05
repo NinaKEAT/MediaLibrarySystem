@@ -2,37 +2,31 @@ namespace MediaLibrarySystem
 {
   public class MediaLibrary
   {
-    private List<MediaItem> _mediaItems;
-
-    public MediaLibrary()
-    {
-      _mediaItems = new List<MediaItem>();
-    }
-
-    // TODO: Implement AddItem method that accepts any MediaItem
+    private readonly List<MediaItem> _mediaItems = new List<MediaItem>();
     public void AddItem(MediaItem item)
     {
-      // Add validation and implementation
-      if (item == null)
+      ArgumentNullException.ThrowIfNull(item, nameof(item));
+      if (_mediaItems.Any(existingItem => existingItem.MediaId == item.MediaId))
       {
-        throw new ArgumentNullException(nameof(item), "Media item cannot be null.");
+        throw new InvalidOperationException($"Item ID {item.MediaId} already exists in the library.");
       }
       _mediaItems.Add(item);
     }
 
-    // TODO: Implement DisplayAllItems using polymorphism
     public void DisplayAllItems()
     {
-      // Use polymorphic method calls to display all items
       foreach (var item in _mediaItems)
       {
         Console.WriteLine(item.GetDisplayInfo());
       }
     }
 
-    // TODO: Implement FindByTitle method
-    public MediaItem FindByTitle(string title)
+    public MediaItem? FindByTitle(string title)
     {
+      if (string.IsNullOrWhiteSpace(title))
+      {
+        throw new ArgumentException("Title cannot be empty.", nameof(title));
+      }
       // Search through collection and return matching item
       foreach (var item in _mediaItems)
       {
@@ -61,6 +55,10 @@ namespace MediaLibrarySystem
     }
     public List<MediaItem> SearchItems(string searchTerm)
     {
+      if (string.IsNullOrWhiteSpace(searchTerm))
+      {
+        throw new ArgumentException("Search term cannot be empty.", nameof(searchTerm));
+      }
       List<MediaItem> results = new List<MediaItem>();
       foreach (var item in _mediaItems)
       {

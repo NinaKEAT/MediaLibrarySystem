@@ -5,13 +5,11 @@ namespace MediaLibrarySystem
   {
     private string _author = string.Empty;
     private int _pageCount;
-    // TODO: Implement constructor with base class initialization
     public Book(string title, int year, string author, int pageCount) : base(title, year)
     {
       Author = author;
       PageCount = pageCount;
     }
-    // TODO: Add Author and PageCount properties with validation
     public string Author
     {
       get => _author;
@@ -19,7 +17,7 @@ namespace MediaLibrarySystem
       {
         if (string.IsNullOrWhiteSpace(value))
         {
-          throw new ArgumentException("Author cannot be empty.");
+          throw new ArgumentException("Author cannot be empty.", nameof(value));
         }
         _author = value;
       }
@@ -31,17 +29,15 @@ namespace MediaLibrarySystem
       {
         if (value <= 0)
         {
-          throw new ArgumentException("Page count must be positive.");
+          throw new ArgumentException("Page count must be positive.", nameof(value));
         }
         _pageCount = value;
       }
     }
-    // TODO: Override abstract method GetDisplayInfo()
     public override string GetDisplayInfo()
     {
       return $"Book: {Title} by {Author} ({Year}) - {PageCount} pages";
     }
-    // TODO: Override virtual method GetBasicInfo() if needed
     public override double GetEstimatedValue()
     {
       double baseValue = base.GetEstimatedValue();
@@ -62,13 +58,10 @@ namespace MediaLibrarySystem
     }
   }
 
-
-
   public class DVD : MediaItem
   {
     private string _director = string.Empty;
     private int _runtimeMinutes;
-    // TODO: Implement similar structure for DVD
     public DVD(string title, int year, string director, int runtimeMinutes) : base(title, year)
     {
       Director = director;
@@ -81,7 +74,7 @@ namespace MediaLibrarySystem
       {
         if (string.IsNullOrWhiteSpace(value))
         {
-          throw new ArgumentException("Director cannot be empty.");
+          throw new ArgumentException("Director cannot be empty.", nameof(value));
         }
         _director = value;
       }
@@ -93,7 +86,7 @@ namespace MediaLibrarySystem
       {
         if (value <= 0)
         {
-          throw new ArgumentException("Runtime must be positive.");
+          throw new ArgumentException("Runtime must be positive.", nameof(value));
         }
         _runtimeMinutes = value;
       }
@@ -122,14 +115,10 @@ namespace MediaLibrarySystem
     }
   }
 
-
-
-
   public class MusicAlbum : MediaItem
   {
     private string _artist = string.Empty;
     private int _trackCount;
-    // TODO: Implement similar structure for MusicAlbum
     public MusicAlbum(string title, int year, string artist, int trackCount) : base(title, year)
     {
       Artist = artist;
@@ -142,7 +131,7 @@ namespace MediaLibrarySystem
       {
         if (string.IsNullOrWhiteSpace(value))
         {
-          throw new ArgumentException("Artist cannot be empty.");
+          throw new ArgumentException("Artist cannot be empty.", nameof(value));
         }
         _artist = value;
       }
@@ -154,7 +143,7 @@ namespace MediaLibrarySystem
       {
         if (value <= 0)
         {
-          throw new ArgumentException("Track count must be positive.");
+          throw new ArgumentException("Track count must be positive.", nameof(value));
         }
         _trackCount = value;
       }
